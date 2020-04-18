@@ -9,13 +9,13 @@ public class GunPointsMouse : MonoBehaviour
 	private Vector3 targetPos;
 	private Vector3 thisPos;
 	private float angle;
-	void start() {
+	void Start() {
 		GameObject cursor = GameObject.FindWithTag("cursor");
  
-if(cursor != null)
-{
-      target = cursor.GetComponent<Transform>();
-}
+		if(cursor != null)
+		{
+			target = cursor.GetComponent<Transform>();
+		}
 	}
 	// Update is called once per frame
 	void Update()

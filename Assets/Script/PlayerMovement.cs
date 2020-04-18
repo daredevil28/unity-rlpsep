@@ -17,13 +17,20 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (directionx = Input.GetAxisRaw("Horizontal") < 0) {
-            rb.AddRelativeForce(Vector3.right * direction * thrust);
+        if (Input.GetAxisRaw("Horizontal") < 0) {
+            rb.AddRelativeForce(Vector3.left * thrust);
             
         }
-        if (directiony = Input.GetAxisRaw("Horizontal") > 0) {
-            rb.AddRelativeForce(Vector3.up * direction * thrust);
+        if (Input.GetAxisRaw("Horizontal") > 0) {
+            rb.AddRelativeForce(Vector3.right * thrust);
             
         }
+        if (Input.GetButtonDown("Vertical")) {
+            rb.AddRelativeForce(Vector3.up * jumpstrength);
+            Debug.Log("Jump");
+        }
+    }
+    public void Knockback() {
+        rb.AddForce((rb.gameObject.transform.position - cursor.position) * backwardsthrust);
     }
 }

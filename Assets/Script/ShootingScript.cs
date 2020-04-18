@@ -8,7 +8,7 @@ public class ShootingScript : MonoBehaviour
 	public GameObject projectile;
 	public static bool fired = false;
 	public static int ammo = 80;
-	private int maxammo;
+	private int maxammo = 80;
 	public float startreloadtime = 10;
 	private float reloadtime;
 	public GameObject PlayerMovement;
@@ -16,7 +16,6 @@ public class ShootingScript : MonoBehaviour
 
 	void Start () {
 		reloadtime = startreloadtime;
-		maxammo = ammo;
 	}
 
 	void FixedUpdate()
